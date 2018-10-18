@@ -1,0 +1,67 @@
+<div class="banner" style="text-align:center">
+    <div class="inline">
+        <div class="inline">
+            <button type="button" class="btn-red pull-right" (click)="getProduct()">getData</button>
+        </div>
+    </div>
+    <div class="inline">
+        <button type="button" class="btn-red pull-right" (click)="logout()">Logout</button>
+    </div>
+</div>
+
+<div *ngIf="product">
+    <ul *ngFor="let prod of product">
+        <li>
+            {{prod}}
+        </li>
+    </ul>
+</div>
+
+
+<div class="flex-container">
+    <div class="box">
+        <h2>You're logged in</h2>
+        <div class="box-content">
+            <label>Username</label>
+            <span>{{profile.username}}</span>
+
+            <label>Email</label>
+            <span>{{profile.email}}</span>
+
+            <label>Full Name</label>
+            <span>{{profile.firstName}} {{profile.lastName}}</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class="box" *ngIf="isManager()">
+        <h2>Manager only</h2>
+        <div class="box-content">
+            <button type="button" class="btn-blue" (click)="getContracts()">Call backend service</button>
+
+            <div *ngIf="contracts">
+                <ul *ngFor="let contract of contracts">
+                    <li>
+                        {{contract.name}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="box" *ngIf="isAdmin()">
+        <h2>Admin only</h2>
+        <div class="box-content">
+            <button type="button" class="btn-blue" (click)="getContracts()">Call backend service</button>
+
+            <div *ngIf="contracts">
+                <ul *ngFor="let contract of contracts">
+                    <li>
+                        {{contract.name}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>  -->
